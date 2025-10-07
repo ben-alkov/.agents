@@ -11,7 +11,7 @@
 - @/home/balkov/.agents/agents-md-extensions/agent_notes.md
 - @/home/balkov/.agents/agents-md-extensions/heavyweight_commands.md
 - @/home/balkov/.agents/agents-md-extensions/code_comments.md
-- @/home/balkov/.agents/agents-md-extensions/git-ops.md
+- @/home/balkov/.agents/agents-md-extensions/test_hygiene.md
 - @/home/balkov/.agents/agents-md-extensions/git_ops.md
 - @/home/balkov/.agents/agents-md-extensions/mcp_tools.md
 - @/home/balkov/.agents/agents-md-extensions/markdown_copyedit.md
