@@ -1,6 +1,8 @@
-# this command plans a commit and PR task
+---
+description: this command plans a commit and PR task
+---
 
-Plan commits and PR description for current changes.
+# Plan commits and PR description for current changes
 
 ## Prerequisites
 
