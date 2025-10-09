@@ -1,6 +1,8 @@
-# this command reports on repo status
+---
+description: this command reports on repo status
+---
 
-Provide a comprehensive status report for the current repo
+# Provide a comprehensive status report for the current repo
 
 ## Procedure
 

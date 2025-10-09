@@ -1,7 +1,9 @@
-# this command fixes GitHub issues. $ARGUMENTS is the GitHub issue to fix
+---
+description: this command fixes GitHub issues. $ARGUMENTS is the GitHub issue to fix
+---
 <!-- markdownlint-disable ul-indent ol-prefix -->
-Fix the GitHub issue specified in $ARGUMENTS by analyzing the problem,
-implementing a solution, and creating a commit on a new branch.
+
+# Fix the GitHub issue specified in $ARGUMENTS by analyzing the problem, implementing a solution, and creating a commit on a new branch.
 
 ## Pre-flight Checks
 

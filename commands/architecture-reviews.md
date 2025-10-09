@@ -1,4 +1,8 @@
-# this command reviews project architecture
+---
+description: this command reviews project architecture
+---
+
+# Architecture review
 
 Analyze the overall architecture and design patterns of any codebase to assess
 maintainability, scalability, and adherence to best practices.
