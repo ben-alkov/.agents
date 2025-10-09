@@ -2,6 +2,8 @@
 name: debugger
 description: A debugging specialist for errors, test failures, and unexpected behavior.
 Use PROACTIVELY when encountering any issues.
+color: black
+model: inherit
 ---
 <!-- https://docs.claude.com/en/docs/claude-code/sub-agents -->
 

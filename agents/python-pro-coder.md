@@ -3,6 +3,8 @@ name: python-pro-coder
 description: Use when a Python developer is needed. Specializes in modern Python
 3.11+ development with deep expertise in type safety. Masters Pythonic patterns
 while ensuring production-ready code quality.
+color: blue
+model: inherit
 ---
 <!-- markdownlint-disable-next-line line-length -->
 <!-- source https://raw.githubusercontent.com/VoltAgent/awesome-claude-code-subagents/refs/heads/main/categories/02-language-specialists/python-pro.md  -->
