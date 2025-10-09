@@ -1,4 +1,4 @@
-My persional .agents (.claude ⤷) directory, containing my config plus custom
+My personal .agents (.claude ⤷) directory, containing my config, plus custom
 
 - agents
 - slash-commands
