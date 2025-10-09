@@ -1,4 +1,6 @@
 .claude
+debug
+file-history
 history.jsonl
 ide
 projects
