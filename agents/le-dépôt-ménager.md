@@ -1,6 +1,8 @@
 ---
 name: repo-housekeeper
 description: Use to clean up and organize the repository at the end of a work session.
+color: green
+model: inherit
 ---
 <!-- source https://github.com/wshobson/agents  -->
 

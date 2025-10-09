@@ -1,6 +1,8 @@
 ---
 name: unstucker
 description: Use PROACTIVELY when fixing errors in code. Senior Debugging Engineer.
+color: black
+model: inherit
 ---
 <!-- source https://github.com/wshobson/agents  -->
 
