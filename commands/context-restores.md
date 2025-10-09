@@ -1,19 +1,67 @@
-# this command restores context
+---
+description: this command loads conversation context from agent-notes directory
+to continue previous session
+allowed-tools: Read
+argument-hint: [filename]
+---
 
-## Session Initialization
+# /context-restores Command
 
-At the beginning of each new session, regardless of the current working directory
+Load conversation context from a previous session stored in the `agent-notes`
+directory at the repository root.
 
-1. Check if `claude_compact_recent.md` exists in the current directory
-2. If it exists, ask the user if they would like to continue with the
-   conversation context from that file
-3. If the user agrees, incorporate the content as context for the current session
+## Arguments
 
-## Conversation Management
+- `$1` (optional): Filename within `agent-notes/` directory
+  - Default: `claude_compact_recent.md`
+  - Security: Only basename used; paths with `/` or `..` rejected
 
-When handling the "/compact" command
+## Task
 
-1. Add the conversation summary to `claude_compact_history.txt` with timestamp
-2. Overwrite `claude_compact_recent.txt` with the same content
-3. Format the header as: `# Conversation Summary - <timestamp>`
-4. Use local time with format: `YYYY-MM-DD HH:MM:SS TZ`
+1. Locate the git repository root directory
+2. Construct file path: `{repo_root}/agent-notes/{filename}`
+   - Use `claude_compact_recent.md` if no argument provided
+3. Check if the file exists:
+   - **File exists:**
+     - Ask user: "Would you like to restore context from `{filename}`?"
+     - If user confirms:
+       - Read entire file content
+       - Present the content verbatim (it has already been compacted)
+       - Keep content available for reference throughout session
+     - If user declines:
+       - Acknowledge: "Context restoration skipped"
+   - **File not found:**
+     - Inform user: "No context file found at `{full_path}`"
+     - Do not treat as error; continue normally
+
+## Expected Behavior
+
+**Success indicators:**
+
+- User can reference information from restored context
+- You can answer questions about previous session work
+- Conversation continuity established
+
+**Failure cases:**
+
+- **File unreadable:** Report error with full path and permission details
+- **Invalid content:** Load anyway, note if content appears malformed
+- **Path traversal attempt:** Reject with security warning
+
+## Constraints
+
+- If argument contains path separators, extract basename only
+- Do not modify any files; this is read-only operation
+
+## Example Usage
+
+```text
+/context-restores
+→ Loads agent-notes/claude_compact_recent.md
+
+/context-restores previous_work.md
+→ Loads agent-notes/previous_work.md
+
+/context-restores ../etc/passwd
+→ Rejected: Invalid path
+```
