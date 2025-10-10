@@ -1,47 +1,62 @@
 # Markdown copyediting
-<!-- markdownlint-disable line-length -->
-- When writing Markdown *always* leave one blank line between *both* the
-    *preceding* and the *following* content, for elements including
+<!-- markdownlint-disable line-length no-inline-html -->
 
-  - headers (e.g. "# Header 1")
-  - any lists, both ordered and unordered, including lists where the of level of
-    indentation changes
-  - code blocks (i.e. using "```")
+Enforce consistent formatting: blank line spacing, 80-character wrapping,
+reference links, and language-tagged code blocks.
 
-  Example, enclosed in triple-quotes
+## Blank line spacing
 
-  """
+Leave one blank line before and after:
 
-  ## Events
+- headers (e.g. "# Header 1")
+- lists (ordered and unordered, including indentation level changes)
+- code blocks (i.e. using "```")
 
-  These are the events
+Example:
 
-  - **Start**: Command execution begins
-  - **Success**: "hello world" printed successfully
-  - **Error**: Any error conditions (if they occur)
+<example>
 
-  ```text
-  Example code block
-  ```
+```markdown
 
-  """
+    ## Events
 
-- When writing code blocks in Markdown (i.e. using "\```"), *always* use a language
-  identifier (e.g. "```python"). If the enclosed text is plaintext, or of unknown
-  type, use the language identifier "text".
-- When writing Markdown, *always* wrap lines at 80 lines, unless the lines are
-  in a code block, or in a link block at the end of the file.
-- When writing Markdown, *always* wrap Inline Links so that the text (in "[]")
-  and the definition (in "()") are on the same line.
-- When writing Markdown, *always* use In-Document Reference Links. The actual
-  links should be in an alphabetized block after the end of the document body,
-  with a single blank line separating the links from the rest of the document.
-  Please do NOT create duplicate links in the links block; simply make a new
-  reference instead.
+    These are the events
 
-    Example, enclosed in triple-quotes
+    - **Start**: Command execution begins
+    - **Success**: "hello world" printed successfully
+    - **Error**: Any error conditions (if they occur)
 
-    """
+    ```python
+    for foo in bar:
+    ```
+
+```
+
+</example>
+
+## Code blocks
+
+Use a language identifier (e.g. "```python"). For plaintext or unknown types,
+use "text".
+
+## Line wrapping
+
+Wrap lines at 80 characters. Exceptions: code blocks, tables, link reference
+blocks.
+
+## Link formatting
+
+Inline links: Keep text (in "[]") and URL (in "()") on the same line.
+
+Reference links: Place link definitions in an alphabetized block at document
+end, separated by one blank line. Avoid duplicate definitions; reuse
+references.
+
+Example:
+
+<example>
+
+```markdown
 
     Visit our [docs][] for more details. Check [Google][] for more info.
     Please check our coding [standards][docs] before submitting PRs.
@@ -55,6 +70,8 @@
     [docs]: https://example.com/documentation
     [Google]: https://www.google.com
 
-    """
+```
+
+</example>
 
 *AFTER READING* markdown_copyedit.md, always say 'I have remembered the markdown_copyedit memory'
