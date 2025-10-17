@@ -1,16 +1,12 @@
 # Test hygiene
 
-Most test work involves pytest running via nox in virtual environments
-specific to the code repository.
-
 ## Test Naming
 
 - Test function names must start with `test_` (pytest requirement)
 - Describe behavior being tested, not implementation details
 - Avoid redundant words like "test" in the descriptive part
   - Bad: `test_test_user_login()`
-  - Good: `test_user_login_with_valid_credentials()`
-  - Better: `test_login_succeeds_with_valid_credentials()`
+  - Good: `test_login_succeeds_with_valid_credentials()`
 
 ## Assertion Strictness
 
@@ -18,8 +14,7 @@ Make assertions as specific as possible to catch regressions.
 
 - Prefer exact equality over partial matching
   - Bad: `assert 'error' in response`
-  - Better: `assert response == {'status': 'error', 'code': 404}`
-  - Best: `assert response == {'status': 'error', 'code': 404, 'message': 'Not found'}`
+  - Good: `assert response == {'status': 'error', 'code': 404, 'message': 'Not found'}`
 
 - Use deep equality for nested structures
   - `assert actual == expected` (pytest provides detailed diffs)
@@ -27,19 +22,11 @@ Make assertions as specific as possible to catch regressions.
 
 - Match exact types when type matters
   - Bad: `assert value == 1` (passes for `True`)
-  - Better: `assert value == 1 and isinstance(value, int)`
+  - Good: `assert value == 1 and isinstance(value, int)`
 
 ## Mocking Strategy
 
 Use mocking as a last resort. Prefer real or fake implementations.
-
-**Terminology:**
-
-- **Mock**: Replace behavior using a mocking framework (unittest.mock,
-  pytest-mock)
-- **Fake**: Lightweight working implementation (e.g., in-memory database)
-- **Stub**: Hardcoded return values for specific inputs
-- **Fixture**: Reusable test data or setup
 
 **Preference order:**
 
@@ -49,13 +36,11 @@ Use mocking as a last resort. Prefer real or fake implementations.
 4. Mock at the smallest boundary (HTTP client, not business logic)
 5. Never mock your own business logic
 
-**pytest-specific tools:**
+**When using pytest:**
 
-- `monkeypatch` fixture for replacing attributes/environment
-- `flexmock` for general mocking
-- `unittest.mock.Mock` specifically for Async code
-- `pytest-mock` for spy/stub helpers
-- Avoid `@patch` decorators (use `monkeypatch` instead for clarity)
+- Prefer `monkeypatch` fixture over `@patch` decorators
+- Use pytest-mock for spy/stub helpers when needed
+- Avoid mocking your own business logic
 
 **Example - prefer fakes:**
 
@@ -88,4 +73,4 @@ def test_weather_report(monkeypatch):
     assert get_forecast() == 'Pleasant 72°F'
 ```
 
-*AFTER READING* test_hygiene.md, always say 'I have remembered the test_hygiene memory'
+*AFTER READING* test_hygiene.md, always say 'I have loaded the test_hygiene memory'
