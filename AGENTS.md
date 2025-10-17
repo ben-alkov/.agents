@@ -8,13 +8,13 @@
 
 ## includes
 
-- @/home/balkov/.agents/agents-md-extensions/agent_notes.md
-- @/home/balkov/.agents/agents-md-extensions/heavyweight_commands.md
-- @/home/balkov/.agents/agents-md-extensions/code_comments.md
-- @/home/balkov/.agents/agents-md-extensions/test_hygiene.md
-- @/home/balkov/.agents/agents-md-extensions/git_ops.md
-- @/home/balkov/.agents/agents-md-extensions/mcp_tools.md
-- @/home/balkov/.agents/agents-md-extensions/markdown_copyedit.md
-- @/home/balkov/.agents/agents-md-extensions/conversational_style.md
+- @/home/balkov/.agents/agents-md-includes/agent_notes.md
+- @/home/balkov/.agents/agents-md-includes/heavyweight_commands.md
+- @/home/balkov/.agents/agents-md-includes/code_comments.md
+- @/home/balkov/.agents/agents-md-includes/test_hygiene.md
+- @/home/balkov/.agents/agents-md-includes/git_ops.md
+- @/home/balkov/.agents/agents-md-includes/mcp_tools.md
+- @/home/balkov/.agents/agents-md-includes/markdown_copyedit.md
+- @/home/balkov/.agents/agents-md-includes/conversational_style.md
 
 *AFTER READING* the global AGENTS.md, always say 'I have remembered the global AGENTS.md memory'
