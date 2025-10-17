@@ -34,6 +34,24 @@ Example:
 
 </example>
 
+## Markdown in Markdown
+
+If you need to provide a Markdown example, be sure to indent the example using 4 spaces
+
+Example:
+
+<example>
+
+```markdown
+
+    - Some markdown formatted text in this example
+
+    ## A header
+
+```
+
+</example>
+
 ## Code blocks
 
 Use a language identifier (e.g. "```python"). For plaintext or unknown types,
