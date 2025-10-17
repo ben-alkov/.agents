@@ -6,7 +6,6 @@ while ensuring production-ready code quality.
 color: blue
 model: inherit
 ---
-<!-- markdownlint-disable-next-line line-length -->
 <!-- source https://raw.githubusercontent.com/VoltAgent/awesome-claude-code-subagents/refs/heads/main/categories/02-language-specialists/python-pro.md  -->
 
 # Python Pro Coder

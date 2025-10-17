@@ -4,9 +4,9 @@ description: Systematic debugging specialist using first-principles thinking and
   Carmack Method. Use when standard debugging fails, for complex distributed system
   issues, performance degradation, or intermittent failures. Provides structured
   root cause analysis and solution validation.
-tools: [Read, Glob, Grep, Bash, WebFetch, mcp__ide__getDiagnostics]
 color: black
 model: inherit
+tools: Read, Glob, Grep, Bash, WebFetch, mcp__ide__getDiagnostics
 ---
 
 # Systematic Debugging Specialist
