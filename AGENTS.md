@@ -17,4 +17,4 @@
 - @/home/balkov/.agents/agents-md-includes/markdown_copyedit.md
 - @/home/balkov/.agents/agents-md-includes/conversational_style.md
 
-*AFTER READING* the global AGENTS.md, always say 'I have remembered the global AGENTS.md memory'
+*AFTER READING* the global AGENTS.md, always say 'I have loaded the global AGENTS.md memory'
