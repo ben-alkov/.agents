@@ -1,72 +1,65 @@
 ---
-description: this command plans a commit and PR task
+description: this command plans commits and a PR description for current changes
+allowed-tools: Bash, Write, Read
 ---
 
-# Plan commits and PR description for current changes
+# /commit-and-pr-plans
 
-## Prerequisites
+## Gather context
 
-### Verify checks pass
+Run git commands to understand changes:
 
-Run `nox` to verify all checks pass:
+```bash
+git status
+git diff HEAD
+git log --oneline -10
+git log $(git merge-base HEAD origin/main 2>/dev/null || echo HEAD)..HEAD --oneline
+```
 
-- If checks fail: stop and report failures - do not proceed with planning
-- If nox is not available: skip this step and note it in the plan output
+If `nox` exists in current directory, run it. Stop if checks fail.
 
-### Gather context
+## Create plan
 
-Run these commands to understand the changes:
+Write plan to `draft-commit-pr-plan.md` at repository root (use `git rev-parse
+--show-toplevel` to resolve path).
 
-- `git status` - identify staged/unstaged/untracked files
-- `git diff HEAD` - see all uncommitted changes
-- `git log --oneline -10` - review recent commit message style
-- `git log $(git merge-base HEAD origin/main)..HEAD --oneline` - see commits
-  since diverging from main (if applicable)
+Follow this structure:
 
-## Commit Requirements
+```markdown
+    # Branch: <type>/<brief-description>
 
-Each commit must:
+    Format: feat|fix|refactor|docs|test|chore / 2-4 hyphenated words
 
-- Address one specific purpose (feature/fix/refactor/docs/test)
-- Be atomic: if reverted, doesn't break builds or tests
-- Include related test changes with the code they test
-- Follow Conventional Commits format: `<type>(<scope>): <description>`
+    ## Commits
 
-## Deliverable: Structured Plan
+    ### 1. <type>(<scope>): <description>
 
-Write complete plan to `draft-commit-pr-plan.md` in git repository root
-(resolve via `git rev-parse --show-toplevel`).
+    **Files:**
+    - `path/to/file.py` (modified)
+    - `tests/test_file.py` (added)
 
-### Section 1: Branch Name
+    **Rationale:** Why these files belong in one commit
 
-Propose single branch name for all changes using format:
-`<type>/<brief-description>`
+    (Repeat for each proposed commit)
 
-- type: feat|fix|refactor|docs|test|chore
-- brief-description: 2-4 words, kebab-case
-- Example: `feat/add-user-auth`
+    ## PR Description
 
-### Section 2: Commit Plan
+    **Summary:** 2-3 sentence overview of all changes
 
-List all proposed commits in order. For each commit show:
+    **Rationale:** Why these changes were needed
 
-- Complete commit message (Conventional Commits format)
-- File changes included (list files with change type: added/modified/deleted)
-- Rationale for grouping these changes together
+    **Implementation:** Key technical decisions or approaches
 
-### Section 3: PR Description Draft
+    **Testing:** How to verify the changes work
 
-Include:
+    **Breaking Changes:** None / description of incompatible changes
+```
 
-- **Summary**: 2-3 sentence overview of all changes
-- **Rationale**: Why these changes were needed
-- **Implementation notes**: Key technical decisions or approaches
-- **Test plan**: How to verify changes work
-- **Breaking changes**: Any backward-incompatible changes (if none, state "None")
+## Guidelines
 
-## Edge Cases
-
-- If no changes exist: report this and exit without creating plan file
-- If changes are already committed but not pushed: plan only the PR description
-- If multiple unrelated change types exist: propose multiple commits with clear
-  separation
+- Group changes by logical purpose, not file type
+- Include tests with the code they verify
+- Each commit must be revertable without breaking builds
+- Use Conventional Commits format (see git_ops.md)
+- If no uncommitted changes exist, report this without creating plan file
+- If changes are committed but not pushed, plan only the PR description
