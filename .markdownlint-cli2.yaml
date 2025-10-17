@@ -20,6 +20,7 @@ config:
       - em
       - strong
   MD035: {style: ---}  # Horizontal rule character
+  MD036: false
   MD040: {language_only: true}  # Specify language for code blocks (initiated by "```")
   MD046: {style: fenced}  # Code block style, i.e. NOT indented
   MD048: {style: backtick}  # Code block fence character
