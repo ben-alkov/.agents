@@ -5,9 +5,9 @@ analysis, security vulnerabilities, performance optimization, and production
 reliability. Masters static analysis tools, security scanning, and configuration
 review with 2025 best practices. Delegated from primary agent after significant
 code changes or before PR merge.
-tools: [Read, Glob, Grep, Bash]
 color: blue
 model: inherit
+tools: Read, Glob, Grep, Bash
 ---
 
 # Elite Python Code Review Expert

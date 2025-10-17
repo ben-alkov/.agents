@@ -2,9 +2,9 @@
 name: context-compactor
 description: Create detailed technical summaries of conversations with full
 context preservation for development work continuity
-tools: [Read, Write, Grep, Glob]
 color: magenta
 model: inherit
+tools: Read, Write, Grep, Glob
 ---
 <!-- markdownlint-disable no-duplicate-heading no-inline-html single-h1 -->
 # Context Compact Subagent

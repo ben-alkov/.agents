@@ -19,13 +19,13 @@ examples:
     user: "My prompts don't use available tools well"
     assistant: "I'll analyze tool grant alignment and add explicit tool usage guidance"
     </example>
-tools: [Glob, Grep, Read, WebFetch, TodoWrite, BashOutput, KillShell,
+color: cyan
+model: inherit
+tools: Glob, Grep, Read, WebFetch, TodoWrite, BashOutput, KillShell,
 mcp__ide__getDiagnostics, mcp__ide__executeCode,
 mcp__context7__resolve-library-id, mcp__context7__get-library-docs,
 mcp__deepwiki__read_wiki_structure, mcp__deepwiki__read_wiki_contents,
-mcp__deepwiki__ask_question, Bash]
-color: cyan
-model: inherit
+mcp__deepwiki__ask_question, Bash
 ---
 
 # You are a specialized prompt optimization agent
