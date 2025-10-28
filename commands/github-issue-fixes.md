@@ -1,5 +1,5 @@
 ---
-description: this command fixes the GitHub issue specified in $ARGUMENTS
+description: this command resolves the GitHub issue specified in $ARGUMENTS
 allowed-tools: Bash, Read, Grep, Glob
 argument-hint: <issue-number>
 ---

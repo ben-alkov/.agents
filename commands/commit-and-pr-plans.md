@@ -1,5 +1,5 @@
 ---
-description: this command plans commits and a PR description for current changes
+description: this command creates a commit and PR plan for any current changes
 allowed-tools: Bash, Write, Read
 ---
 
