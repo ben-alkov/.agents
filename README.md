@@ -1,3 +1,4 @@
+<!-- markdownlint-disable no-bare-urls -->
 > NOTE: this repo is very much oriented towards Software Engineering tasks. I
 > expect you to read the files to figure out what they do/how they work (you
 > should be doing so regardless)
@@ -10,18 +11,20 @@ My personal .agents (.claude ⤷) directory, containing my config, plus custom:
   better organization)
 - convenience ./claude.json ⤷ ~/.claude.json
 
-### Workflow
+### Workflow for Prompt-likes
 
-For creating any prompt-type files in here (subagents, AGENT.md includes,
+For creating any prompt-like files in here (subagents, AGENT.md includes,
 slash-commands, probably skills some day), I come up with a basic idea, then go
 through several rounds of Q&A and improvement using the swe-master-prompter
 sub-agent. Then:
 
 - invoke the swe-master-prompter subagent with a prompt roughly like:
 
-  "Using {e.g.} https://docs.claude.com/en/docs/claude-code/sub-agents as a
-  reference, please analyze/enhance/optimize the prompt {or file, or whatever}
-  FOO"
+  ```markdown
+    Using {e.g.} https://docs.claude.com/en/docs/claude-code/sub-agents as a
+    reference, please analyze/enhance/optimize the prompt {or file, or whatever}
+    FOO"
+  ```
 
   - Using specific links from docs.claude.com as a reference keeps
   swe-master-prompter focused on what *type* of prompt it should be working on.
@@ -29,7 +32,8 @@ sub-agent. Then:
   I use:
 
   - https://docs.claude.com/en/docs/claude-code/sub-agents - for subagents
-  - https://docs.claude.com/en/docs/claude-code/slash-commands#custom-slash-commands - for slash-commands
+  - https://docs.claude.com/en/docs/claude-code/slash-commands#custom-slash-commands,
+    for slash-commands
   - Sadly, the docs for CLAUDE.md files aren't very good for this type of task
 
   > Note that "analyze/enhance/optimize" are actually specifically chosen and
