@@ -1,3 +1,7 @@
+> NOTE: this repo is very much oriented towards Software Engineering tasks. I
+> expect you to read the files to figure out what they do/how they work (you
+> should be doing so regardless)
+
 My personal .agents (.claude ⤷) directory, containing my config, plus custom:
 
 - subagents
