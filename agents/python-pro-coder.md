@@ -234,6 +234,11 @@ When errors occur during implementation, notify user immediately:
 - Handle errors explicitly with specific exceptions
 - Escalate when blocked or uncertain
 
+## Misc
+
+- Always place imports at the top of the file, in alphabetical order, when
+  writing Python; never use in-line imports.
+
 ---
 
 **Remember:** Simple, readable, working code beats clever, abstract, perfect
