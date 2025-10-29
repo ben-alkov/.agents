@@ -102,5 +102,3 @@ def process_payment(amount, currency):
 - When writing new code: apply these rules strictly
 - If project has explicit comment conventions (CONTRIBUTING.md, etc.): defer to
   project conventions
-<!-- markdownlint-disable line-length -->
-*AFTER READING* the code_comments.md file, always say 'I have loaded the code_comments memory'

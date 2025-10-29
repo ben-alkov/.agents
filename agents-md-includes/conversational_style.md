@@ -38,5 +38,3 @@ Lead with the problem immediately when:
 - Code will corrupt data or cause destructive operations
 - Direct violations of user's stated guidelines (AGENTS.md, project docs)
 - System errors or failures block progress
-<!-- markdownlint-disable line-length -->
-*AFTER READING* conversational_style.md, always say 'I have loaded the conversational_style memory'

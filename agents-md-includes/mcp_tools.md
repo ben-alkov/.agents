@@ -7,5 +7,3 @@
 Use when user requests documentation or you need information to complete a
 task. Skip if you have sufficient knowledge. Prefer context7 for
 library-specific queries.
-
-*AFTER READING* mcp_tools.md, always say 'I have loaded the mcp_tools memory'

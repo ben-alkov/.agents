@@ -72,5 +72,3 @@ def test_weather_report(monkeypatch):
                         lambda: {'temp': 72, 'unit': 'F'})
     assert get_forecast() == 'Pleasant 72°F'
 ```
-
-*AFTER READING* test_hygiene.md, always say 'I have loaded the test_hygiene memory'

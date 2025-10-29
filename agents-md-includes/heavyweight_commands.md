@@ -24,5 +24,3 @@ rails db:migrate       # Database migrations
 - Quick checks: `npm run lint`, `cargo check`, `pytest tests/unit/test_foo.py`
 - Commands with `--help` or `--version` flags
 - Fast builds explicitly requested by user
-<!-- markdownlint-disable line-length -->
-*AFTER READING* heavyweight_commands.md, always say 'I have loaded the heavyweight_commands memory'

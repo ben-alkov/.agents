@@ -20,19 +20,44 @@ Only stage files you recognize and intentionally modified.
 
 ## Commit Messages
 
-Format: `type(scope): description`
+**Format:**
+
+```text
+type(scope): description
+
+[optional body]
+
+[optional footer]
+```
 
 **Required:**
 
-- `type`: feat, fix, docs, style, refactor, test, chore, perf, ci, build,
-  agents, repo
+- `type`
+
+  - `feat` – New feature
+  - `fix` – Bug fix
+  - `perf` – Performance improvements
+  - `refactor` – Code refactoring
+  - `docs` – Documentation changes
+  - `test` – Test additions or modifications
+  - `chore` – Other changes that don't modify src or test files
+  - `agent` - Agent-realted changes (commands, agent docs/instructions, etc.)
+  - `build` – Build system or dependency changes
+  - `ci` – CI configuration changes
+  - `repo` - Organizational changes, git-related changes (e,g, .gitignore)
+
 - `description`: User-facing impact (max 70 chars, lowercase, no period)
 
 **Optional:**
 
-- `scope`: Component affected (auth, api, cli)
+- `scope`: e.g.: auth, api, cli, db, deps etc. (indicates affected module)
 - `!` after type/scope for breaking changes
 - Body: Rationale for non-obvious changes (blank line separator)
+- Footer:
+
+  - issue refs: `Fixes: #123`, `Closes: #456`, `Related: #789`
+  - breaking changes: `BREAKING CHANGE: description`
+  - co-authors: `Co-authored-by: Name <email@example.com>`
 
 **Good examples:**
 
@@ -50,6 +75,20 @@ BREAKING CHANGE: Tokens now use JWT. Existing tokens invalidated.
 - Praise adjectives (comprehensive, best)
 - Vague descriptions (updated the code, fixed the bug)
 - Change process verbs (added, changed, updated)
+
+**igned-off-by:**
+
+Always use the `-s` / `--signoff` flag when committing:
+
+```bash
+git commit -s -m "feat(auth): add token validation"
+```
+
+This automatically adds "Signed-off-by: <name> <email>" using the human user's
+git config credentials.
+
+Never manually add signoff lines. The `-s` flag ensures the signoff
+represents the human repository owner, not the AI agent.
 
 ## Commit Scope
 
@@ -73,6 +112,13 @@ A commit represents a logical unit when:
 - Bug fix requires both implementation and regression test
 - New feature requires implementation and integration tests
 
+## Merge Order
+
+Merge commits intelligently by type priority
+(fix > feat > perf > refactor > docs > test > chore > all others)
+
+If commits aren't in priority order, it's OK to rebase them
+
 ## Branch Operations
 
 **Naming:** `<type>/<brief-description>`
@@ -95,19 +141,10 @@ Never push to remotes. Provide user with exact command to run manually.
 **Pulling updates:**
 
 ```bash
-git pull origin main          # Default: merge strategy
-git pull --rebase origin main # Ask user before using rebase
+git pull --rebase upstream main
 ```
 
 Use rebase only when: user approves, clean history, no conflicts expected.
-
-**Merging feature branches:**
-
-```bash
-git merge --no-ff <branch>  # Default: preserves branch history
-```
-
-Only fast-forward/squash with user approval.
 
 ## Error Handling
 
@@ -200,5 +237,3 @@ git branch recovery-branch HEAD@{n}
 - `git clean -fd`
 - `git rebase --skip`
 - `git push --force`
-
-*AFTER READING* git_ops.md, always say 'I have loaded the git_ops memory'

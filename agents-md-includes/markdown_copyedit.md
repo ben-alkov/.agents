@@ -55,5 +55,3 @@ Markdown examples (indent 4 spaces):
 
         - List item
 ```
-<!-- markdownlint-disable line-length -->
-*AFTER READING* markdown_copyedit.md, always say 'I have loaded the markdown_copyedit memory'
