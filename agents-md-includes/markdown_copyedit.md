@@ -11,6 +11,9 @@ user-facing content. Preserve existing project style when it differs.
 <!-- markdownlint-disable no-space-in-code -->
 **Code blocks:** Always use language tags (```python, ```bash, ```text).
 
+**Headings over bold:** Use proper heading levels (####) for structural labels,
+not bold text with colons. Convert patterns like **Symptom:** to #### Symptom.
+
 **Links:**
 
 - Inline: Keep `[text](url)` on same line, even if it exceeds 80 chars
@@ -54,4 +57,22 @@ Markdown examples (indent 4 spaces):
         ## Header
 
         - List item
+```
+
+Headings vs bold text:
+
+```markdown
+    Good:
+    #### Symptom
+    The database is read-only.
+
+    #### Root Cause
+    Permission issue.
+
+    Bad:
+    **Symptom:**
+    The database is read-only.
+
+    **Root Cause:**
+    Permission issue.
 ```

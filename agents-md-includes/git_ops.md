@@ -23,7 +23,7 @@ Only stage files you recognize and intentionally modified.
 **Format:**
 
 ```text
-type(scope): description
+type(scope)!: description
 
 [optional body]
 
@@ -36,15 +36,18 @@ type(scope): description
 
   - `feat` – New feature
   - `fix` – Bug fix
+  - `secure` - A verified fix for security issues of any kind
   - `perf` – Performance improvements
   - `refactor` – Code refactoring
   - `docs` – Documentation changes
   - `test` – Test additions or modifications
-  - `chore` – Other changes that don't modify src or test files
+  - `chore` – e.g. tech debt
   - `agent` - Agent-realted changes (commands, agent docs/instructions, etc.)
   - `build` – Build system or dependency changes
   - `ci` – CI configuration changes
   - `repo` - Organizational changes, git-related changes (e,g, .gitignore)
+  - `style` - Changes that do not affect the meaning of the code (white-space,
+              formatting, missing semi-colons, etc)
 
 - `description`: User-facing impact (max 70 chars, lowercase, no period)
 
@@ -76,7 +79,7 @@ BREAKING CHANGE: Tokens now use JWT. Existing tokens invalidated.
 - Vague descriptions (updated the code, fixed the bug)
 - Change process verbs (added, changed, updated)
 
-**igned-off-by:**
+**Signed-off-by:**
 
 Always use the `-s` / `--signoff` flag when committing:
 
